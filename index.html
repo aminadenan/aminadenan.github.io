@@ -36,7 +36,13 @@
     font-size: 1rem;
     text-decoration: none;
     border-radius:5px;
-}
+    }
+    #map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+    }
     </style>
 
 </head>
@@ -580,7 +586,7 @@
   </div> <!-- End client -->
   
   <!-- Blog -->
-  <div class="vg-page page-blog" id="blog">
+  <!-- <div class="vg-page page-blog" id="blog">
     <div class="container">
       <div class="text-center">
         <div class="badge badge-subhead wow fadeInUp">Blog</div>
@@ -628,7 +634,8 @@
         </div>
       </div>
     </div>
-  </div> <!-- End blog -->
+  </div> -->
+   <!-- End blog -->
   
   <!-- Contact -->
   <div class="vg-page page-contact" id="contact">
@@ -640,7 +647,7 @@
       <div class="row py-5">
         <div class="col-lg-7 px-0 pr-lg-3 wow zoomIn">
           <div class="vg-maps">
-            <div id="google-maps" style="width: 100%; height: 100%;"></div>
+            <div id="map"></div>
           </div>
         </div>
         <div class="col-lg-5">
@@ -675,7 +682,7 @@
           <div class="footer-info">
             <p>Where to find me</p>
             <hr class="divider">
-            <p class="fs-large fg-white">1600 Amphitheatre Parkway Mountain View, California 94043 US</p>
+            <p class="fs-large fg-white">Kota Damansara, Selangor</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-3 py-3">
@@ -695,9 +702,8 @@
             <p>Contact me</p>
             <hr class="divider">
             <ul class="list-unstyled">
-              <li>info@virtual.com</li>
-              <li>+8890234</li>
-              <li>+813023</li>
+              <li>aminsyazu13@gmail.com</li>
+              <li>+0199390577</li>
             </ul>
           </div>
         </div>
@@ -715,7 +721,7 @@
           </form>
         </div>
         <div class="col-12">
-          <p class="text-center mb-0 mt-4">Copyright &copy;2020. All right reserved | This template is made with <span class="ti-heart fg-theme-red"></span> by <a href="https://www.macodeid.com/">MACode ID</a></p>
+          <p class="text-center mb-0 mt-4">Copyright &copy;2021. All right reserved | This profile is made with <span class="ti-heart fg-theme-red"></span> by <a href="https://aminadenan.github.io/">Amin Adenan</a></p>
         </div>
       </div>
     </div>
@@ -741,7 +747,26 @@
   <script src="assets/js/google-maps.js"></script>
     
   <script src="assets/js/topbar-virtual.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcaDMr86HX3KUja14e5nEhNvxwjXheAm8&callback=initMap">
+</script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  
+  <script>
+    // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: 3.139003, lng: 101.686852 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+  </script>
 </body>
 </html>
